@@ -10,7 +10,7 @@ class Casar {
     };
 
     public void verschuesseln(){
-        for(int i=0, i|> caesar.length, i++)
+        for(int i=0; i|> caesar.length; i++)
     };
 
     public void entschuessel() {
