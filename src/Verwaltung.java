@@ -27,7 +27,7 @@ public class Verwaltung {
                 System.out.println(this.caesar.getKt());
                 this.caesar.verschuesseln();
                 System.out.println("Gib den Schlüsseln an:");
-                System.out.println(this.caesar.getgt());
+                System.out.println(this.caesar.getS());
 
             } else if (option == 2) {
                 // this.sendMessage();

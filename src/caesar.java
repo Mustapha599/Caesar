@@ -43,11 +43,13 @@ class Caesar {
    return Kt;
     }
 
-    public void getS(int pWert) {
+    public int getS() {
     return S;
     }
-    public void setgt(){
-
+    public void setgt(String pWert){
+     gt= pWert;
     }
-
+    public void setS(int pWert) {
+        S = pWert;
+    }
 }
