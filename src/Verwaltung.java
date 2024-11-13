@@ -1,3 +1,4 @@
+import.java.util.Scanner;
 public class Verwaltung {
 
     private Scanner scanner;
@@ -17,23 +18,25 @@ public class Verwaltung {
                 System.out.println("Gib die Zeichenkette an, die verschuesseln werden soll:");
                 String zeichenkette = scanner.nextLine();
                 System.out.println("Gib den Schlüsseln an:");
-                String schuesselString = scanner.nextLine();
-
+                String schuessel = scanner.nextLine();
+                int schluessel = Integer.parseInt(schluessel);
+                caesar = new Caesar();
+                this.caesar.setKt(zeichenkette);
+                this.caesar.setKt(schluessel);
+                System.out.println("Gib die Zeichenkette an, die entschuesseln werden soll:");
+                System.out.println(this.caesar.getKt());
+                this.caesar.verschuesseln();
+                System.out.println("Gib den Schlüsseln an:");
+                System.out.println(this.caesar.getgt());
 
             } else if (option == 2) {
                 // this.sendMessage();
-                System.out.println("Gib die Zeichenkette an, die entschuesseln werden soll:");
+
                 String zeichenkette = scanner.nextLine();
-                System.out.println("Gib den Schlüsseln an:");
+
                 String schuesselString = scanner.nextLine();
-                int schluessel = Integer.parseInt(schluesselString);
-                caesar = new Caesar();
-                this.caesar.sekKt
-                System.out.println("Ist dein Wort ein Palindrom? Die Antwort lautet: "+this.test.isIstPalindrom());
-            }
-            else if (option == 0) {
-                break;
-            }
+
+
             System.out.println();
         }
     }
@@ -41,5 +44,5 @@ public class Verwaltung {
 
 
 }
-    }
 }
+

@@ -1,4 +1,4 @@
-class Casar {
+class Caesar {
     private String Kt;
     private int S;
     private String gt;
@@ -10,40 +10,44 @@ class Casar {
     };
 
     public void verschuesseln(){
-        for(int i=0; i|> caesar.length; i++)
-    };
-
-    public void entschuessel() {
-
+        for(int i=0; i< Kt.length()-1; i++) {
+            int h = this.getASCII(Kt.charAt(i));
+            gt = gt + this.getChar(h+ S);
+        }
     }
 
+    public void entschuessel() {
+        for(int i=0; i< gt.length()-1; i++){
+            int h = this.getASCII(gt.charAt(i));
+            gt = gt + this.getChar(h-S);
+
+        }
+    }
+
+    //Wandelt Buchstaben in Zahlen um.
     public int getASCII(char pWert) {
+    return (int)pWert;
+    }
 
-   return; }
 
+    //Wandelt Zahlen in Buchstaben
     public char getChar(int pWert) {
-
-    return;}
+        return (char)pWert;
+    }
 
     public void getKt(String pWert) {
 
     };
 
     public String getKt() {
-        return;
+   return Kt;
     }
 
     public void getS(int pWert) {
+    return S;
+    }
+    public void setgt(){
 
     }
-
-    private char getChar (int pWert){
-        return (char) pWert;
-    }
-
-    private int getChar (char pWert){
-        return (int) pWert;
-    }
-
 
 }
