@@ -52,4 +52,7 @@ class Caesar {
     public void setS(int pWert) {
         S = pWert;
     }
+    public void setKt() {
+
+    }
 }
