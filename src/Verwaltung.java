@@ -1,4 +1,4 @@
-import.java.util.Scanner;
+import java.util.Scanner;
 public class Verwaltung {
 
     private Scanner scanner;
@@ -18,23 +18,20 @@ public class Verwaltung {
                 System.out.println("Gib die Zeichenkette an, die verschuesseln werden soll:");
                 String zeichenkette = scanner.nextLine();
                 System.out.println("Gib den Schlüsseln an:");
-                String schuessel = scanner.nextLine();
-                int schluessel = Integer.parseInt(schluessel);
+                String schluesselString = scanner.nextLine();
+                int schluessel = Integer.parseInt(schluesselString);
                 caesar = new Caesar();
                 this.caesar.setKt(zeichenkette);
-                this.caesar.setKt(schluessel);
-                System.out.println("Gib die Zeichenkette an, die entschuesseln werden soll:");
+                this.caesar.setS(schluessel);
+                System.out.println("========Klartext=====");
                 System.out.println(this.caesar.getKt());
                 this.caesar.verschuesseln();
-                System.out.println("Gib den Schlüsseln an:");
-                System.out.println(this.caesar.getS());
+                System.out.println("========Geheimtext=====");
+                System.out.println(this.caesar.getgt());
+
 
             } else if (option == 2) {
                 // this.sendMessage();
-
-                String zeichenkette = scanner.nextLine();
-
-                String schuesselString = scanner.nextLine();
 
 
             System.out.println();
