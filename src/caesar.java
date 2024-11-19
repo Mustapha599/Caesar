@@ -4,13 +4,14 @@ class Caesar {
     private String gt;
 
 
-    public void casar() {
-
-    }
-
-    ;
+    public Caesar() {
+    Kt="";
+    S=0;
+    gt="";
+    } ;
 
     public void verschuesseln() {
+
         for (int i = 0; i < Kt.length() - 1; i++) {
             int h = this.getASCII(Kt.charAt(i));
             gt = gt + this.getChar(h + S);
@@ -18,6 +19,7 @@ class Caesar {
     }
 
     public void entschuessel() {
+
         for (int i = 0; i < gt.length() - 1; i++) {
             int h = this.getASCII(gt.charAt(i));
             gt = gt + this.getChar(h - S);
@@ -32,7 +34,7 @@ class Caesar {
 
 
     //Wandelt Zahlen in Buchstaben
-    public char getChar(int pWert) {
+    private char getChar(int pWert) {
         return (char) pWert;
     }
 
@@ -65,4 +67,6 @@ class Caesar {
     public String getgt() {
         return gt;
     }
+
 }
+
