@@ -12,17 +12,17 @@ class Caesar {
 
     public void verschuesseln() {
 
-        for (int i = 0; i < Kt.length() - 1; i++) {
+        for (int i = 0; i < Kt.length(); i++) {
             int h = this.getASCII(Kt.charAt(i));
             gt = gt + this.getChar(h + S);
         }
     }
 
-    public void entschuessel() {
+    public void entschuesseln() {
 
-        for (int i = 0; i < gt.length() - 1; i++) {
+        for (int i = 0; i < gt.length() ; i++) {
             int h = this.getASCII(gt.charAt(i));
-            gt = gt + this.getChar(h - S);
+            Kt = Kt + this.getChar(h - S);
 
         }
     }
@@ -42,7 +42,7 @@ class Caesar {
 
     }
 
-    ;
+
 
     public String getKt() {
         return Kt;

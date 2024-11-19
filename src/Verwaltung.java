@@ -31,11 +31,20 @@ public class Verwaltung {
 
 
             } else if (option == 2) {
-                // this.sendMessage();
+                System.out.println("Gib die Zeichenkette an, die verschuesseln werden soll:");
+                String zeichenkette = scanner.nextLine();
+                System.out.println("Gib den Schlüsseln an:");
+                String schluesselString = scanner.nextLine();
+                int schluessel = Integer.parseInt(schluesselString);
+                caesar = new Caesar();
+                this.caesar.setgt(zeichenkette);
+                this.caesar.setS(schluessel);
+                System.out.println("========Geheimtext=====");
+                System.out.println(zeichenkette);
+                this.caesar.entschuesseln();
+                System.out.println("========Klartext=====");
+                System.out.println(this.caesar.getKt());
 
-
-
-            System.out.println();
         }
     }
 
