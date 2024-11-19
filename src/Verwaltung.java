@@ -31,7 +31,7 @@ public class Verwaltung {
 
 
             } else if (option == 2) {
-                System.out.println("Gib die Zeichenkette an, die verschuesseln werden soll:");
+                System.out.println("Gib die Zeichenkette an, die entschuesseln werden soll:");
                 String zeichenkette = scanner.nextLine();
                 System.out.println("Gib den Schlüsseln an:");
                 String schluesselString = scanner.nextLine();
