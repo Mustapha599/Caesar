@@ -4,7 +4,7 @@ public class Verwaltung {
     private Scanner scanner;
     private Caesar caesar;
     public static void main(String[] args){ new Verwaltung();}
-    public Verwaltung(){
+    public Verwaltung() {
 
         scanner = new Scanner(System.in);
         while (true) {
@@ -45,11 +45,13 @@ public class Verwaltung {
                 System.out.println("========Klartext=====");
                 System.out.println(this.caesar.getKt());
 
+            } else if (option == 0) {
+                break;
+            }
+
+
         }
     }
-
-
-
 }
-}
+
 
