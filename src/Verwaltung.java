@@ -3,6 +3,7 @@ public class Verwaltung {
 
     private Scanner scanner;
     private Caesar caesar;
+    private Viginere viginere;
 
     public static void main(String[] args) {
         new Verwaltung();
@@ -52,20 +53,20 @@ public class Verwaltung {
 
             } else if (option == 0) {
                 break;
-            } else if (option == 3) {
-                System.out.println("Gib die Zeichenkette an, die entschuesseln werden soll:");
+            }else if (option == 3) {
+                System.out.println("Gib die Zeichenkette an, die verschuesseln werden soll:");
                 String zeichenkette = scanner.nextLine();
-                System.out.println("Gib den Schlüsseln an:");
+                System.out.println("Gib das Codewort an:");
                 String schluesselString = scanner.nextLine();
-                int schluessel = Integer.parseInt(schluesselString);
-                caesar = new Caesar();
-                this.caesar.setgt(zeichenkette);
-                this.caesar.setS(schluessel);
-                System.out.println("========Geheimtext=====");
-                System.out.println(zeichenkette);
-                this.caesar.entschuesseln();
+                String schluessel = String.join(schluesselString);
+                viginere = new Viginere();
+                this.viginere.setkt(zeichenkette);
+                this.viginere.setschluessel(schluessel);
                 System.out.println("========Klartext=====");
-                System.out.println(this.caesar.getKt());
+                System.out.println(this.viginere.getkt());
+                this.viginere.verschlusseln();
+                System.out.println("========Geheimtext=====");
+                System.out.println(this.viginere.getgt());
 
             }
         }

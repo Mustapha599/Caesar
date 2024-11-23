@@ -5,9 +5,9 @@ class Caesar {
 
 
     public Caesar() {
-    Kt="";
-    S=0;
-    gt="";
+    Kt="";  //Entleert Klartext
+    S=0; //Entleert Schlüssel
+    gt=""; //Entleert Geheimtext
     } ;
 
     public void verschuesseln() {
