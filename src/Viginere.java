@@ -21,7 +21,11 @@ private String schluessel; //Schlüssel für die Verschlüsselung
      }
     // Entschlüsselt den Geheitext mit dem Vigenère-Algorithmus
     public void entschlusseln() {
-
+        for (int i = 0; i < kt.length(); i++) {     // Durchläuft die ganze Zeichenkette
+            int h = this.zahlenZuBuchstaben(kt.charAt(i));
+            int j = this.buchstabenZuZahlen(schluessel.charAt(i%schluessel.length()));
+            gt = gt + this.buchstabenZuZahlen((char) (h - j % 26));
+        }
     }
     //Wandelt Buchstaben in Zahlen um.
     private char zahlenZuBuchstaben(int pWert){

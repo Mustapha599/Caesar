@@ -9,7 +9,7 @@ class Caesar {
     S=0; //Entleert Schlüssel
     gt=""; //Entleert Geheimtext
     } ;
-
+   // Verschlüsselt den Klartext mit dem Cäsar-Algorithmus
     public void verschuesseln() {
 
         for (int i = 0; i < Kt.length(); i++) {
@@ -17,7 +17,7 @@ class Caesar {
             gt = gt + this.getChar(h + S);
         }
     }
-
+    // Entschlüsselt den Geheimtext mit dem Cäsar-Algorithmus
     public void entschuesseln() {
 
         for (int i = 0; i < gt.length() ; i++) {
