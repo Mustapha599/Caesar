@@ -13,18 +13,18 @@ private String schluessel; //Schlüssel für die Verschlüsselung
      }
     // Verschlüsselt den Klartext mit dem Vigenère-Algorithmus
     public void verschlusseln(){
-         for (int i = 0; i < kt.length(); i++) {     // Durchläuft die ganze Zeichenkette
-             int h = this.zahlenZuBuchstaben(kt.charAt(i));
-             int j = this.buchstabenZuZahlen(schluessel.charAt(i%schluessel.length()));
-             gt = gt + this.buchstabenZuZahlen((char) (h + j % 26));
-         }
+        for (int i = 0; i < kt.length(); i++) {     // Durchläuft die ganze Zeichenkette
+            int h = this.buchstabenZuZahlen(kt.charAt(i));
+            int j = this.buchstabenZuZahlen(schluessel.charAt(i));
+            gt = gt + this.zahlenZuBuchstaben((char) (h+j));
+        }
      }
     // Entschlüsselt den Geheitext mit dem Vigenère-Algorithmus
     public void entschlusseln() {
-        for (int i = 0; i < kt.length(); i++) {     // Durchläuft die ganze Zeichenkette
-            int h = this.zahlenZuBuchstaben(kt.charAt(i));
-            int j = this.buchstabenZuZahlen(schluessel.charAt(i%schluessel.length()));
-            gt = gt + this.buchstabenZuZahlen((char) (h - j % 26));
+        for (int i = 0; i < gt.length(); i++) {
+            int n = this.buchstabenZuZahlen(gt.charAt(i));
+            int m = this.buchstabenZuZahlen(schluessel.charAt(i));
+            kt = kt + this.zahlenZuBuchstaben(n - m);
         }
     }
     //Wandelt Buchstaben in Zahlen um.

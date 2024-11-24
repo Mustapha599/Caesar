@@ -60,12 +60,12 @@ public class Verwaltung {
                 String zeichenkette = scanner.nextLine();
                 System.out.println("Gib das Codewort an:");
                 String schluesselString = scanner.nextLine();
-                String schluessel = String.join(schluesselString);
+                String schluessel =(schluesselString);
                 viginere = new Viginere();
                 this.viginere.setkt(zeichenkette);
                 this.viginere.setschluessel(schluessel);
                 System.out.println("========Klartext=====");
-                System.out.println(this.viginere.getkt());
+                System.out.println(zeichenkette);
                 this.viginere.verschlusseln();
                 System.out.println("========Geheimtext=====");
                 System.out.println(this.viginere.getgt());
@@ -74,12 +74,12 @@ public class Verwaltung {
 
                 System.out.println("Gib die Zeichenkette an, die entschuesseln werden soll:");
                 String zeichenkette = scanner.nextLine();
-                System.out.println("Gib den Schlüsseln an:");
+                System.out.println("Gib das Codewort an:");
                 String schluesselString = scanner.nextLine();
-                String schluessel = String.join(schluesselString);
+                String schluessel = (schluesselString);
                 viginere = new Viginere();
                 this.viginere.setgt(zeichenkette);
-                this.viginere.setschluessel(String.join(schluessel));
+                this.viginere.setschluessel(schluessel);
                 System.out.println("========Geheimtext=====");
                 System.out.println(zeichenkette);
                 this.viginere.entschlusseln();
