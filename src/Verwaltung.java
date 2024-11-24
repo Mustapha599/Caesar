@@ -12,13 +12,15 @@ public class Verwaltung {
     public Verwaltung() {
 
         scanner = new Scanner(System.in);
+        int option;
         while (true) {
             System.out.println("== HAUPTMENÜ ==");
             System.out.println("[1] Caesar verschuesseln");
             System.out.println("[2] Caesar entschuesseln ");
             System.out.println("[0] Beenden");
             System.out.println("[3] Viginere verschuesseln");
-            int option = scanner.nextInt();
+            System.out.println("[4] Viginere entschuesseln");
+            option = scanner.nextInt();
             scanner.nextLine(); // nextInt scannt keine neue Zeile. Ohne diese Anweisung würde das nächste gewollte nextLine nicht funktionieren.
             if (option == 1) {
                 System.out.println("Gib die Zeichenkette an, die verschuesseln werden soll:");
@@ -53,7 +55,7 @@ public class Verwaltung {
 
             } else if (option == 0) {
                 break;
-            }else if (option == 3) {
+            } else if (option == 3) {
                 System.out.println("Gib die Zeichenkette an, die verschuesseln werden soll:");
                 String zeichenkette = scanner.nextLine();
                 System.out.println("Gib das Codewort an:");
@@ -68,7 +70,25 @@ public class Verwaltung {
                 System.out.println("========Geheimtext=====");
                 System.out.println(this.viginere.getgt());
 
+            } else if (option == 4) {
+
+                System.out.println("Gib die Zeichenkette an, die entschuesseln werden soll:");
+                String zeichenkette = scanner.nextLine();
+                System.out.println("Gib den Schlüsseln an:");
+                String schluesselString = scanner.nextLine();
+                String schluessel = String.join(schluesselString);
+                viginere = new Viginere();
+                this.viginere.setgt(zeichenkette);
+                this.viginere.setschluessel(String.join(schluessel));
+                System.out.println("========Geheimtext=====");
+                System.out.println(zeichenkette);
+                this.viginere.entschlusseln();
+                System.out.println("========Klartext=====");
+                System.out.println(this.viginere.getkt());
+
+
             }
+
         }
     }
 }
