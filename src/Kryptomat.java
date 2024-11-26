@@ -1,24 +1,29 @@
-public class Kryptomat {
+public abstract class  Kryptomat {
 
+    //Attribute der Abstrakten- Klasse
 private String gt;
 private String kt;
 
 
 
-
+//Konstruktor
 public Kryptomat(){
 
 }
-public void verschluesseln(){
+//verschlüsselt den Kt
+public void  verschlusseln(){
 
 }
+//entschlüsselt den Gt
 public void entschluesseln(){
 
     }
+  // Wandelt Zahlen in Buchstaben um
 private char getChar(int pWert){
 
         return (char) pWert;
 }
+//Wandelt Buchstaben in Zahlen um
 private int getAscii(char pWert){
         return (int) pWert;
 }

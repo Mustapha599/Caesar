@@ -1,4 +1,4 @@
-class Caesar {
+class Caesar extends Kryptomat {
     private String Kt;
     private int S;
     private String gt;

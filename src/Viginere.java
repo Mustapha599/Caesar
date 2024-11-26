@@ -1,7 +1,7 @@
-public class Viginere {
+public class Viginere extends Kryptomat {
 
 private String gt; //Geheimtext
-private String kt; // Klartext
+private String kt; // Klartextextends Kryptomat
 private String schluessel; //Schlüssel für die Verschlüsselung
 
 
@@ -15,16 +15,25 @@ private String schluessel; //Schlüssel für die Verschlüsselung
     public void verschlusseln(){
         for (int i = 0; i < kt.length(); i++) {     // Durchläuft die ganze Zeichenkette
             int h = this.buchstabenZuZahlen(kt.charAt(i));
-            int j = this.buchstabenZuZahlen(schluessel.charAt(i));
+            int j = this.buchstabenZuZahlen(schluessel.charAt(i))-64;
+            System.out.println("Test");
             gt = gt + this.zahlenZuBuchstaben((char) (h+j));
-        }
-     }
+            System.out.println(gt + "Test2");
+        } while(schluessel.length()<kt.length()){
+            schluessel=schluessel+schluessel;;
+
+         }
+    }
     // Entschlüsselt den Geheitext mit dem Vigenère-Algorithmus
     public void entschlusseln() {
         for (int i = 0; i < gt.length(); i++) {
             int n = this.buchstabenZuZahlen(gt.charAt(i));
             int m = this.buchstabenZuZahlen(schluessel.charAt(i));
             kt = kt + this.zahlenZuBuchstaben(n - m);
+            while(schluessel.length()<kt.length()){
+                schluessel=schluessel+schluessel;;
+
+            }
         }
     }
     //Wandelt Buchstaben in Zahlen um.
@@ -35,9 +44,7 @@ private String schluessel; //Schlüssel für die Verschlüsselung
     private int buchstabenZuZahlen(char pWert) {
          return (int) pWert;
     }
-    public String getgt(){
-         return gt;
-}
+
     public void setgt(String pGt) {
 
 }

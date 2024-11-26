@@ -10,7 +10,7 @@ public class Verwaltung {
     }
 
     public Verwaltung() {
-
+        viginere= new Viginere();
         scanner = new Scanner(System.in);
         int option;
         while (true) {
@@ -68,7 +68,8 @@ public class Verwaltung {
                 System.out.println(zeichenkette);
                 this.viginere.verschlusseln();
                 System.out.println("========Geheimtext=====");
-                System.out.println(this.viginere.getgt());
+                String Test=this.viginere.getgt();
+                System.out.println(Test);
 
             } else if (option == 4) {
 
