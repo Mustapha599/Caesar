@@ -68,8 +68,8 @@ public class Verwaltung {
                 System.out.println(zeichenkette);
                 this.viginere.verschluesseln();
                 System.out.println("========Geheimtext=====");
-                String Test=this.viginere.getGt();
-                System.out.println(Test);
+                System.out.println(this.viginere.getGt());
+
 
             } else if (option == 4) {
 

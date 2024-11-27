@@ -1,13 +1,11 @@
 public class Caesar extends Kryptomat {
-    private String kt;
+
     private int S;
-    private String gt;
 
 
     public Caesar() {
-    kt="";  //Entleert Klartext
-    S=0; //Entleert Schlüssel
-    gt=""; //Entleert Geheimtext
+        super();
+        S=0; //Entleert Schlüssel
     } ;
    // Verschlüsselt den Klartext mit dem Cäsar-Algorithmus
     public void verschluesseln() {
@@ -19,19 +17,13 @@ public class Caesar extends Kryptomat {
     }
     // Entschlüsselt den Geheimtext mit dem Cäsar-Algorithmus
     public void entschluesseln() {
-
+        kt="";
         for (int i = 0; i < gt.length() ; i++) {
             int h = this.getASCII(gt.charAt(i));
             kt = kt + this.getChar(h - S);
 
         }
     }
-
-    //Wandelt Buchstaben in Zahlen um.
-    public int getASCII(char pWert) {
-        return (int) pWert;
-    }
-
 
 
     public int getS() {
@@ -43,9 +35,6 @@ public class Caesar extends Kryptomat {
     public void setS(int pWert) {
         S = pWert;
     }
-
-
-
 
 
 }

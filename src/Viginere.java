@@ -16,9 +16,7 @@ private String S; //Schlüssel für die Verschlüsselung
         for (int i = 0; i < kt.length(); i++) {     // Durchläuft die ganze Zeichenkette
             int h = this.getASCII(kt.charAt(i));
             int j = this.getASCII(S.charAt(i))-64;
-            System.out.println("Test");
             gt = gt + this.getChar(h+j);
-            System.out.println(gt + "Test2");
         } while(S.length()<kt.length()){
            S=S+S;;
 
@@ -36,29 +34,23 @@ private String S; //Schlüssel für die Verschlüsselung
             }
         }
     }
-    //Wandelt Buchstaben in Zahlen um.
-    public int getASCII(char pWert) {
-        return (int) pWert;
-    }
-    //Wandelt Zahlen in Buchstaben.
-   public char getChar(int pWert){
 
-        return (char) pWert;}
+
 
     public void setgt(String pGt) {
-
+     gt=pGt;
 }
      public String getkt(){
          return kt;
 }
     public void setkt(String pKt){
-
+        kt = pKt;
 }
    public String getS(){
          return S;
 }
    public void setS(String pSchluessel){
-
+  S= pSchluessel;
 }
 
 

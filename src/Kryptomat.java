@@ -1,14 +1,15 @@
 public abstract class  Kryptomat {
 
     //Attribute der Abstrakten- Klasse
-private String gt;
-private String kt;
+protected String gt;
+protected String kt;
 
 
 
 //Konstruktor
 public Kryptomat(){
-
+ gt = "";
+ kt ="";
 }
 //verschlüsselt den Kt
 public abstract void  verschluesseln();
