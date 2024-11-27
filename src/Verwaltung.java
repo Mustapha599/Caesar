@@ -85,7 +85,7 @@ public class Verwaltung {
                 System.out.println(zeichenkette);
                 this.viginere.entschluesseln();
                 System.out.println("========Klartext=====");
-                System.out.println(this.viginere.getkt());
+                System.out.println(this.viginere.getKt());
 
 
             }

@@ -1,7 +1,7 @@
 public class Viginere extends Kryptomat {
 
-private String gt; //Geheimtext
-private String kt; // Klartextextends Kryptomat
+
+
 private String S; //Schlüssel für die Verschlüsselung
 
 
@@ -13,23 +13,23 @@ private String S; //Schlüssel für die Verschlüsselung
      }
     // Verschlüsselt den Klartext mit dem Vigenère-Algorithmus
     public void verschluesseln(){
-        for (int i = 0; i < kt.length(); i++) {     // Durchläuft die ganze Zeichenkette
+        for (int i = 0; i < kt.length(); i++) {
+            while(S.length()<kt.length()){
+            S=S+S;;
+        }    // Durchläuft die ganze Zeichenkette
             int h = this.getASCII(kt.charAt(i));
             int j = this.getASCII(S.charAt(i))-64;
             gt = gt + this.getChar(h+j);
-        } while(S.length()<kt.length()){
-           S=S+S;;
-
-         }
+        }
     }
     // Entschlüsselt den Geheitext mit dem Vigenère-Algorithmus
     public void entschluesseln() {
         for (int i = 0; i < gt.length(); i++) {
+            while(S.length()<gt.length()){
+            S= S+S;
             int n = this.getASCII(gt.charAt(i));
             int m = this.getASCII(S.charAt(i));
             kt = kt + this.getChar(n - m);
-            while(S.length()<kt.length()){
-                S= S+S;;
 
             }
         }
