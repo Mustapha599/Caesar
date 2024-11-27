@@ -11,26 +11,22 @@ public Kryptomat(){
 
 }
 //verschlüsselt den Kt
-public void  verschlusseln(){
-
-}
+public abstract void  verschluesseln();
 //entschlüsselt den Gt
-public void entschluesseln(){
-
-    }
+public abstract void entschluesseln();
   // Wandelt Zahlen in Buchstaben um
-private char getChar(int pWert){
+protected char getChar(int pWert){
 
         return (char) pWert;
 }
 //Wandelt Buchstaben in Zahlen um
-private int getAscii(char pWert){
+protected int getASCII(char pWert){
         return (int) pWert;
 }
-public String getgt(){
+public String getGt(){
     return gt;
 }
-public void  setgt(String pGt){
+public void  setGt(String pGt){
     gt = pGt;
 }
 public String getKt(){

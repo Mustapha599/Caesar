@@ -33,9 +33,9 @@ public class Verwaltung {
                 this.caesar.setS(schluessel);
                 System.out.println("========Klartext=====");
                 System.out.println(this.caesar.getKt());
-                this.caesar.verschuesseln();
+                this.caesar.verschluesseln();
                 System.out.println("========Geheimtext=====");
-                System.out.println(this.caesar.getgt());
+                System.out.println(this.caesar.getGt());
 
 
             } else if (option == 2) {
@@ -45,11 +45,11 @@ public class Verwaltung {
                 String schluesselString = scanner.nextLine();
                 int schluessel = Integer.parseInt(schluesselString);
                 caesar = new Caesar();
-                this.caesar.setgt(zeichenkette);
+                this.caesar.setGt(zeichenkette);
                 this.caesar.setS(schluessel);
                 System.out.println("========Geheimtext=====");
                 System.out.println(zeichenkette);
-                this.caesar.entschuesseln();
+                this.caesar.entschluesseln();
                 System.out.println("========Klartext=====");
                 System.out.println(this.caesar.getKt());
 
@@ -63,12 +63,12 @@ public class Verwaltung {
                 String schluessel =(schluesselString);
                 viginere = new Viginere();
                 this.viginere.setkt(zeichenkette);
-                this.viginere.setschluessel(schluessel);
+                this.viginere.setS(schluessel);
                 System.out.println("========Klartext=====");
                 System.out.println(zeichenkette);
-                this.viginere.verschlusseln();
+                this.viginere.verschluesseln();
                 System.out.println("========Geheimtext=====");
-                String Test=this.viginere.getgt();
+                String Test=this.viginere.getGt();
                 System.out.println(Test);
 
             } else if (option == 4) {
@@ -80,10 +80,10 @@ public class Verwaltung {
                 String schluessel = (schluesselString);
                 viginere = new Viginere();
                 this.viginere.setgt(zeichenkette);
-                this.viginere.setschluessel(schluessel);
+                this.viginere.setS(schluessel);
                 System.out.println("========Geheimtext=====");
                 System.out.println(zeichenkette);
-                this.viginere.entschlusseln();
+                this.viginere.entschluesseln();
                 System.out.println("========Klartext=====");
                 System.out.println(this.viginere.getkt());
 

@@ -2,48 +2,48 @@ public class Viginere extends Kryptomat {
 
 private String gt; //Geheimtext
 private String kt; // Klartextextends Kryptomat
-private String schluessel; //Schlüssel für die Verschlüsselung
+private String S; //Schlüssel für die Verschlüsselung
 
 
 
     public Viginere(){
          kt=""; //Entleert Klartext
-         schluessel=""; //Entleert Schlüsselwort
+         S=""; //Entleert Schlüsselwort
          gt=""; //Entleert Geheimtext
      }
     // Verschlüsselt den Klartext mit dem Vigenère-Algorithmus
-    public void verschlusseln(){
+    public void verschluesseln(){
         for (int i = 0; i < kt.length(); i++) {     // Durchläuft die ganze Zeichenkette
-            int h = this.buchstabenZuZahlen(kt.charAt(i));
-            int j = this.buchstabenZuZahlen(schluessel.charAt(i))-64;
+            int h = this.getASCII(kt.charAt(i));
+            int j = this.getASCII(S.charAt(i))-64;
             System.out.println("Test");
-            gt = gt + this.zahlenZuBuchstaben((char) (h+j));
+            gt = gt + this.getChar(h+j);
             System.out.println(gt + "Test2");
-        } while(schluessel.length()<kt.length()){
-            schluessel=schluessel+schluessel;;
+        } while(S.length()<kt.length()){
+           S=S+S;;
 
          }
     }
     // Entschlüsselt den Geheitext mit dem Vigenère-Algorithmus
-    public void entschlusseln() {
+    public void entschluesseln() {
         for (int i = 0; i < gt.length(); i++) {
-            int n = this.buchstabenZuZahlen(gt.charAt(i));
-            int m = this.buchstabenZuZahlen(schluessel.charAt(i));
-            kt = kt + this.zahlenZuBuchstaben(n - m);
-            while(schluessel.length()<kt.length()){
-                schluessel=schluessel+schluessel;;
+            int n = this.getASCII(gt.charAt(i));
+            int m = this.getASCII(S.charAt(i));
+            kt = kt + this.getChar(n - m);
+            while(S.length()<kt.length()){
+                S= S+S;;
 
             }
         }
     }
     //Wandelt Buchstaben in Zahlen um.
-    private char zahlenZuBuchstaben(int pWert){
-         return (char) pWert;
+    public int getASCII(char pWert) {
+        return (int) pWert;
     }
     //Wandelt Zahlen in Buchstaben.
-    private int buchstabenZuZahlen(char pWert) {
-         return (int) pWert;
-    }
+   public char getChar(int pWert){
+
+        return (char) pWert;}
 
     public void setgt(String pGt) {
 
@@ -54,10 +54,10 @@ private String schluessel; //Schlüssel für die Verschlüsselung
     public void setkt(String pKt){
 
 }
-   public String getschluessel(){
-         return schluessel;
+   public String getS(){
+         return S;
 }
-   public void setschluessel(String pSchluessel){
+   public void setS(String pSchluessel){
 
 }
 
