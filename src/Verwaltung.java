@@ -20,7 +20,7 @@ public class Verwaltung {
             System.out.println("[0] Beenden");
             System.out.println("[3] Viginere verschuesseln");
             System.out.println("[4] Viginere entschuesseln");
-            option = scanner.nextInt();
+option = scanner.nextInt();
             scanner.nextLine(); // nextInt scannt keine neue Zeile. Ohne diese Anweisung würde das nächste gewollte nextLine nicht funktionieren.
             if (option == 1) {
                 System.out.println("Gib die Zeichenkette an, die verschuesseln werden soll:");
