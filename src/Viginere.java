@@ -28,7 +28,7 @@ private String S; //Schlüssel für die Verschlüsselung
             while(S.length()<gt.length()){
             S= S+S;
             int n = this.getASCII(gt.charAt(i));
-            int m = this.getASCII(S.charAt(i))+64;
+            int m = this.getASCII(S.charAt(i))-64;
             kt = kt + this.getChar(n - m);
 
             }
