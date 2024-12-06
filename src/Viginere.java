@@ -40,9 +40,7 @@ private String S; //Schlüssel für die Verschlüsselung
     public void setgt(String pGt) {
      gt=pGt;
 }
-     public String getkt(){
-         return kt;
-}
+
     public void setkt(String pKt){
         kt = pKt;
 }
