@@ -1,0 +1,64 @@
+public class DualzahlenKryptomat extends Kryptomat {
+
+    // Konstruktor
+    public DualzahlenKryptomat() {
+        super(); // Rufe den Konstruktor der Oberklasse auf
+    }
+
+    /**
+     * Verschlüsselt eine Dualzahl, indem jeder Bit-Wert mit Math.pow(2, i) multipliziert wird
+     * und die Ergebnisse summiert werden, um eine Dezimalzahl zu erzeugen.
+     * @param dualzahl Die zu verschlüsselnde Dualzahl als String.
+     * @return Die verschlüsselte Zahl als String.
+     */
+    public String verschluesseln(String dualzahl) {
+        if (!istGueltigeDualzahl(dualzahl)) {
+            throw new IllegalArgumentException("Ungültige Dualzahl: " + dualzahl);
+        }
+
+        int verschluesselteZahl = 0;
+        // Iteriere durch die Dualzahl von rechts nach links
+        for (int i = 0; i < dualzahl.length(); i++) {
+            char bit = dualzahl.charAt(dualzahl.length() - 1 - i); // Aktuelles Bit von rechts
+            if (bit == '1') {
+                // Addiere den Wert des aktuellen Bits multipliziert mit 2^i
+                verschluesselteZahl += Math.pow(2, i);
+            }
+        }
+    }
+
+    /**
+     * Entschlüsselt eine verschlüsselte Dezimalzahl zurück in ihre Dualdarstellung.
+     * @param verschluesselteZahl Die verschlüsselte Zahl als String.
+     * @return Die entschlüsselte Dualzahl als String.
+     */
+    public String entschluesseln(String verschluesselteZahl) {
+        int zahl;
+        try {
+            // Konvertiere die verschlüsselte Zahl in einen Integer
+            zahl = Integer.parseInt(verschluesselteZahl);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Ungültige verschlüsselte Zahl: " + verschluesselteZahl);
+        }
+
+        StringBuilder dualzahl = new StringBuilder();
+        // Teile die Zahl wiederholt durch 2, um die Binärdarstellung zu erhalten
+        while (zahl > 0) {
+            dualzahl.insert(0, zahl % 2); // Füge den Rest (0 oder 1) vorne ein
+            zahl /= 2; // Reduziere die Zahl
+        }
+        return dualzahl.length() > 0 ? dualzahl.toString() : "0"; // Gib die Dualzahl zurück oder "0" für 0
+    }
+
+    /**
+     * Überprüft, ob eine Zeichenkette eine gültige Dualzahl ist (nur '0' und '1').
+     * @param zahl Die zu überprüfende Zeichenkette.
+     * @return true, wenn die Zeichenkette eine gültige Dualzahl ist, sonst false.
+     */
+    private boolean istGueltigeDualzahl(String zahl) {
+        // Eine gültige Dualzahl besteht nur aus den Zeichen '0' und '1'
+        return zahl != null && zahl.matches("[01]+");
+    }
+
+    
+}
